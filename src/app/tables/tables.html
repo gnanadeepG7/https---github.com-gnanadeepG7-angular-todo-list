@@ -1,0 +1,40 @@
+<div class="center-container">
+  <div><h1>TODO-LIST</h1></div>
+  <button (click)="openPopup()" type="button" class="btn btn-primary btnPop">Add person</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>DOB</th>
+        <th>Comments</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.dob }}</td>
+        <td>{{ person.comments }}</td>
+        <td>
+          <!-- <td> -->
+          <div class="icon">
+            <span (click)="edit(person)" id="edit-icon">&#9998;</span>
+            &nbsp;&nbsp;
+            <span (click)="delete(person)" id="delete-icon">&#128465;</span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-pop-up
+  *ngIf="showPopup"
+  [personToEdit]="editingPerson"
+  [isEditMode]="isEditMode"
+  (submitData)="addPerson($event)"
+  (updateData)="updatePerson($event)"
+  (closePopup)="closePopup()"
+></app-pop-up>

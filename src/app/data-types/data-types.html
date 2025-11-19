@@ -1,0 +1,67 @@
+<!-- <p>data-types works!</p>
+<h2>hello hii</h2>
+<h1>{{name}}</h1>
+<h2>{{age}} </h2>
+<h2>{{big}} </h2>
+ -->
+<!-- increse and dic -->
+<div>
+  <div class="main">
+    <h3 class="count">{{ count }}</h3>
+  </div>
+  <div class="main">
+    <button (click)="handledIncrement()" class="btn bg-red">+</button>
+    <button (click)="handleddec()" class="btn">-</button>
+    <button (click)="reset()" class="btn">r</button>
+  </div>
+</div>
+<!-- -----------------------if else and toggle-------------------------- -->
+<h1>if else and toggle</h1>
+
+<button (click)="hide1()">hide</button>
+<button (click)="show1()">show</button>
+@if(display1) {
+<div style="background-color: rgb(205, 58, 58); width: 200px; height: 200px">hide and show</div>
+}
+
+<hr />
+<button (click)="toggle()">toggle</button>
+<button (click)="toggle()">{{ display2 ? 'hide' : 'show' }}</button>
+@if(display2) {
+<div style="background-color: rgb(124, 58, 205); width: 200px; height: 200px">toggle</div>
+
+}
+
+<hr />
+<button (click)="toggleDiv()">toggle div</button>
+@if(display){
+<div style="background-color: rgb(13, 166, 237); width: 200px; height: 200px">if</div>
+} @else{
+<div style="background-color: rgb(212, 11, 165); width: 150px; height: 200px">else</div>
+
+}
+<hr />
+<!-- for-------- -->
+
+<h1>for loop</h1>
+<h1>{{ user }}</h1>
+<h1>{{ user[1] }}</h1>
+<hr />
+@for (u of user; track u) {
+<h1>{{ u }}</h1>
+} @for(uname of users;track uname;let id=$index) {
+<h3>
+  <span>{{ id + 1 }}</span
+  >&nbsp;.&nbsp; <span>{{ uname.name }}</span
+  >&nbsp;,&nbsp; <span>{{ uname.empid }}</span
+  >&nbsp;,&nbsp;
+  <span>{{ uname.email }}</span>
+</h3>
+}
+<!-- signels -->
+<h1>hellooo</h1>
+<h1>{{ countr }}</h1>
+<h2>{{ sign() }}</h2>
+<button (click)="updateVal()">update</button>
+
+<button>btn</button>

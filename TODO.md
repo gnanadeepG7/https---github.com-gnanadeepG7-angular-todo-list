@@ -1,0 +1,3 @@
+- [x] Add @Output EventEmitter to use.ts and a method to emit a message on button click
+- [x] Add a button in use.html to trigger the emit method
+- [x] Uncomment <app-use> in app.html
