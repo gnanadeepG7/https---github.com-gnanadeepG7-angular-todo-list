@@ -2,13 +2,13 @@ table {
   width: 1000px;
   border-collapse: collapse;
   table-layout: fixed;
-  border: 1px solid rgb(188, 186, 183);
+  border: 1px solid rgb(255, 255, 255);
 
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 th {
-  border: 1px solid rgb(188, 186, 183);
+  border: 1px solid rgb(221, 195, 159);
   padding: 5px;
   text-align: left;
   word-wrap: break-word;
@@ -18,7 +18,7 @@ th {
 }
 
 td {
-  border: 1px solid rgb(188, 186, 183);
+  border: 1px solid rgb(218, 191, 155);
   padding-left: 10px;
   text-align: left;
   word-wrap: break-word;
@@ -32,7 +32,7 @@ td {
   font-size: 20px;
   cursor: pointer;
   border: none;
-  background-color: #f0d49c;
+  background-color: #eec97e;
   color: white;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -41,7 +41,7 @@ td {
 }
 
 .btnPop:hover {
-  background-color: #09c8f8;
+  background-color: #036580;
 }
 .center-container {
   display: flex;

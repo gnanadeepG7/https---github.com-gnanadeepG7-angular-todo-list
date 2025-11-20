@@ -44,7 +44,6 @@
             type="date"
             class="form-control"
             formControlName="dob"
-            [max]="maxDate"
             (change)="calculateAgeFromDOB()"
         /></label>
       </div>
@@ -57,7 +56,7 @@
       </div>
 
       <!-- Submit -->
-      <div class="button-container">
+      <div class="button-contdooainer">
         <button type="submit" class="btn btn-primary">
           {{ isEditMode ? 'Update' : 'Submit' }}
         </button>

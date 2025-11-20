@@ -112,8 +112,7 @@ export class PopUp implements OnChanges {
       !this.userForm.value.firstName ||
       !this.userForm.value.lastName ||
       !this.userForm.value.age ||
-      !this.userForm.value.dob ||
-      this.userForm.value.comments
+      !this.userForm.value.dob
     ) {
       this.showErrorMessage = true;
       return;

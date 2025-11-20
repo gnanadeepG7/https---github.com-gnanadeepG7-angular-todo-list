@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopUp } from '../pop-up/pop-up';
 
@@ -15,16 +16,18 @@ interface Person {
   templateUrl: './tables.html',
   styleUrl: './tables.css',
 })
-export class Tables {
+export class Tables implements OnInit {
   showPopup = false;
   people: Person[] = [];
   editingPerson: Person | null = null;
   editingIndex: number = -1;
   isEditMode: boolean = false;
 
-  /**
-   * @param person The person object to edit.
-   */
+  ngOnInit(): void {
+    const stored = localStorage.getItem('persons');
+    this.people = stored ? JSON.parse(stored) : [];
+  }
+
   edit(person: Person) {
     this.editingPerson = person;
     this.editingIndex = this.people.indexOf(person);
@@ -32,15 +35,14 @@ export class Tables {
     this.showPopup = true;
   }
 
-  /**
-   * @param person The person object to delete.
-   */
+  // DELETE PERSON FROM TABLE + LOCAL STORAGE
   delete(person: Person) {
-    // Placeholder for delete functionality
+    // REMOVE FROM TABLE
     this.people = this.people.filter((p) => p !== person);
-  }
 
-  // Opens the popup for adding a new person.
+    // UPDATE LOCAL STORAGE
+    localStorage.setItem('persons', JSON.stringify(this.people));
+  }
 
   openPopup() {
     this.editingPerson = null;
@@ -49,8 +51,6 @@ export class Tables {
     this.showPopup = true;
   }
 
-  // Closes the popup and resets editing state.
-
   closePopup() {
     this.showPopup = false;
     this.editingPerson = null;
@@ -58,21 +58,17 @@ export class Tables {
     this.isEditMode = false;
   }
 
-  /**
-   * @param person The person object to add.
-   */
   addPerson(person: Person) {
     this.people.push(person);
+    localStorage.setItem('persons', JSON.stringify(this.people));
     this.closePopup();
   }
 
-  /**
-   * @param person The updated person object.
-   */
   updatePerson(person: Person) {
     if (this.editingIndex !== -1) {
       this.people[this.editingIndex] = person;
     }
+    localStorage.setItem('persons', JSON.stringify(this.people));
     this.closePopup();
   }
 }

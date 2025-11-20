@@ -1,6 +1,8 @@
 <div class="center-container">
   <div><h1>TODO-LIST</h1></div>
-  <button (click)="openPopup()" type="button" class="btn btn-primary btnPop">Add person</button>
+  <button (click)="openPopup()" type="button" class="btn btn-primary btnPop">
+    Add person
+  </button>
 
   <table class="table">
     <thead>
@@ -19,7 +21,6 @@
         <td>{{ person.dob }}</td>
         <td>{{ person.comments }}</td>
         <td>
-          <!-- <td> -->
           <div class="icon">
             <span (click)="edit(person)" id="edit-icon">&#9998;</span>
             &nbsp;&nbsp;
@@ -30,6 +31,7 @@
     </tbody>
   </table>
 </div>
+
 <app-pop-up
   *ngIf="showPopup"
   [personToEdit]="editingPerson"
