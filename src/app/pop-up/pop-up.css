@@ -10,7 +10,6 @@
   background-color: rgb(215, 200, 209);
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.100);
 }
-
 input,
 textarea {
   width: 100%;
@@ -20,26 +19,20 @@ textarea {
   border-radius: 4px;
   outline: none;
 }
-
 .mb-3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 15px;
 }
-
 .mb-3 .form-label {
   width: 100%;
   margin-bottom: 2px;
   text-align: left;
 }
-
 .button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  text-align: center;
 }
-
 .btn-primary {
   padding: 5px;
   width: 130px;
@@ -51,13 +44,11 @@ textarea {
   transition: 0.s 0.3s;
   color: rgb(255, 255, 255);
 }
-
 .btn-primary:hover {
   background-color: #1f556c;
   cursor: pointer;
   color: white;
 }
-
 .close-icon {
   position: absolute;
   top: 10px;
@@ -66,11 +57,9 @@ textarea {
   cursor: pointer;
   color: #333;
 }
-
 .close-icon:hover {
   color: #c41212;
 }
-
 #error-msg {
   color: red;
   font-size: 14px;

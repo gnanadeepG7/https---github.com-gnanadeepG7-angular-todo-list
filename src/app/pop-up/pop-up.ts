@@ -63,7 +63,7 @@ export class PopUp implements OnChanges {
   calculateDOBFromAge() {
     const age = this.userForm.get('age')?.value;
 
-    if (age && age > 0) {
+    if (age !== null && age !== undefined && age !== '' && age >= 0) {
       const today = new Date();
       const birthYear = today.getFullYear() - age;
 
@@ -105,13 +105,13 @@ export class PopUp implements OnChanges {
       this.userForm.patchValue({ age });
     }
   }
-
   onSubmit() {
-    //  VALIDATION: all fields required
     if (
       !this.userForm.value.firstName ||
       !this.userForm.value.lastName ||
-      !this.userForm.value.age ||
+      this.userForm.value.age === null ||
+      this.userForm.value.age === undefined ||
+      this.userForm.value.age === '' ||
       !this.userForm.value.dob
     ) {
       this.showErrorMessage = true;

@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopUp } from '../pop-up/pop-up';
@@ -9,7 +8,6 @@ interface Person {
   dob: string;
   comments: string;
 }
-
 @Component({
   selector: 'app-tables',
   imports: [CommonModule, PopUp],
@@ -27,20 +25,16 @@ export class Tables implements OnInit {
     const stored = localStorage.getItem('persons');
     this.people = stored ? JSON.parse(stored) : [];
   }
-
+  //edit person in table
   edit(person: Person) {
     this.editingPerson = person;
     this.editingIndex = this.people.indexOf(person);
     this.isEditMode = true;
     this.showPopup = true;
   }
-
-  // DELETE PERSON FROM TABLE + LOCAL STORAGE
+  // delete person from table
   delete(person: Person) {
-    // REMOVE FROM TABLE
     this.people = this.people.filter((p) => p !== person);
-
-    // UPDATE LOCAL STORAGE
     localStorage.setItem('persons', JSON.stringify(this.people));
   }
 
